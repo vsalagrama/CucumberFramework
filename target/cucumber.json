@@ -1,0 +1,78 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-05-18T17:48:51.236Z",
+        "line": 5,
+        "name": "Sample Scenario",
+        "description": "",
+        "id": "automation-of-webtest-cases-using-feature-files-in-gherkin-format;sample-scenario",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8618043200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "open the url",
+            "match": {
+              "location": "stepDefinitions.Steps.open_the_url()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 123714800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "type \"Venkatesh\" into searchbar",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Venkatesh\"",
+                  "offset": 5
+                }
+              ],
+              "location": "stepDefinitions.Steps.type_into(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12429557000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click Submit",
+            "match": {
+              "location": "stepDefinitions.Steps.click_Submit()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11775405200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "click Videos",
+            "match": {
+              "location": "stepDefinitions.Steps.click_Videos()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Automation of Webtest cases using Feature files in gherkin format",
+    "description": "Description : The purpose of this feature is to test End 2 End integration",
+    "id": "automation-of-webtest-cases-using-feature-files-in-gherkin-format",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Dryrun/Sample.feature",
+    "tags": []
+  }
+]

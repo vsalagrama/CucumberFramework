@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Automation of Webtest cases using Feature files in gherkin format
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.06 s - in Automation of Webtest cases using Feature files in gherkin format
