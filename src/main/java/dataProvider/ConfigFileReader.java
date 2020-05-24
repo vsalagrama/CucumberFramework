@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Properties;
 
-import javax.management.RuntimeErrorException;
+
 
 public class ConfigFileReader {
 	private Properties properties;

@@ -8,7 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import dataProvider.ConfigFileReader;
-import enums.*;
+
 
 public class WebDriverManager {
 	private WebDriver driver;
