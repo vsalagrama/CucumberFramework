@@ -16,11 +16,11 @@ import io.cucumber.junit.CucumberOptions;
 
 public class TestRunner {
 
-	@AfterClass
-	public static void writeExtentReport() {
-		String configFile = "src/configs/extent-config.xml";
-		Reporter.loadXMLConfig(new File(configFile).getAbsoluteFile());
-		Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
-	}
+//	@AfterClass
+//	public static void writeExtentReport() {
+//		String configFile = "src/configs/extent-config.xml";
+//		Reporter.loadXMLConfig(new File(configFile).getAbsoluteFile());
+//		Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
+//	}
 
 }

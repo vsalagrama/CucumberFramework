@@ -39,6 +39,7 @@ public class WebDriverManager {
 
 	private WebDriver createLocalDriver() {
 		if (driverType.equalsIgnoreCase("CHROME")) {
+			System.setProperty("webdriver.chrome.silentOutput", "true");
 			System.setProperty(CHROME_DRIVER_PROPERTY,
 					FileReaderManager.getInstance().getConfigReader().getDriverPath());
 			driver = new ChromeDriver();

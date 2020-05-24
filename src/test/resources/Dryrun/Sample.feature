@@ -9,3 +9,4 @@ Scenario: Sample Scenario
 	And click Submit
 	#Then get screenshot
 	Then click Videos
+	Then close
