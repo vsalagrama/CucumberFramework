@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/Dryrun/Sample.feature", glue = { "stepDefinitions" }, plugin = {
-		"html:target/site/cucumber-pretty","json:target/cucumber.json" }, monochrome = true)
+		"html:target/site/cucumber-pretty","json:target/cucumber.json" }, monochrome = true, strict = true)
 
 public class TestRunner {
 

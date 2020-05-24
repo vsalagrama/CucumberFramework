@@ -5,6 +5,7 @@
 	<groupId>AutoBot</groupId>
 	<artifactId>CucumberFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
 	<dependencies>
 
 		<dependency>
@@ -64,7 +65,14 @@
 
 
 	</dependencies>
+	<properties>
+   <timestamp>${maven.build.timestamp}</timestamp>
+
+   <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+</properties>
 	<build>
+	
+	
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -98,12 +106,12 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>cucumber-jvm-example</projectName>
+							<projectName>Automation Project with BDD</projectName>
 							<!-- optional, per documentation set this to "true" to bypass generation 
 								of Cucumber Reports entirely, defaults to false if not specified -->
 							<skip>false</skip>
 							<!-- output directory for the generated report -->
-							<outputDirectory>${project.build.directory}</outputDirectory>
+							<outputDirectory>${project.build.directory}/${maven.build.timestamp} </outputDirectory>
 							<!-- optional, defaults to outputDirectory if not specified -->
 							<inputDirectory>${project.build.directory}</inputDirectory>
 							<jsonFiles>
