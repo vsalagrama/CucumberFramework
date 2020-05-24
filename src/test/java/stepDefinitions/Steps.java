@@ -19,7 +19,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import managers.FileReaderManager;
 import managers.PageObjectManager;
-import managers.WebDriverManager;
+import managers.DriverManager;
 import pageObjects.HomePage;
 import pageObjects.Results;
 import utilities.MyScreenRecorder;
@@ -37,7 +37,7 @@ public class Steps {
 	Results res;
 	PageObjectManager pageObjectManager;
 	ConfigFileReader config = new ConfigFileReader();
-	WebDriverManager webDriverManager;
+	DriverManager webDriverManager;
 
 	@Before
 	public void setup(Scenario scenario) {
@@ -70,7 +70,7 @@ public class Steps {
 	
 	@Given("open the url")
 	public void open_the_url() {
-		webDriverManager = new WebDriverManager();
+		webDriverManager = new DriverManager();
 		driver = webDriverManager.createDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getimplicitwait(),

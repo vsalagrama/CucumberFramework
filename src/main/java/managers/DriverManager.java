@@ -5,19 +5,21 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import dataProvider.ConfigFileReader;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class WebDriverManager {
+public class DriverManager {
 	private WebDriver driver;
 	private static String driverType;
 	private static String environmentType;
 	ConfigFileReader config = new ConfigFileReader();
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
-	public WebDriverManager() {
+	public DriverManager() {
 		driverType = FileReaderManager.getInstance().getConfigReader().browser();
 		environmentType = FileReaderManager.getInstance().getConfigReader().getenvironment();
 	}
@@ -40,22 +42,18 @@ public class WebDriverManager {
 	private WebDriver createLocalDriver() {
 		if (driverType.equalsIgnoreCase("CHROME")) {
 			System.setProperty("webdriver.chrome.silentOutput", "true");
-			System.setProperty(CHROME_DRIVER_PROPERTY,
-					FileReaderManager.getInstance().getConfigReader().getDriverPath());
+			WebDriverManager.chromedriver().setup();			
 			driver = new ChromeDriver();
 
 		} else if (driverType.equalsIgnoreCase("FIREFOX")) {
-			System.setProperty("webdriver.gecko.driver",
-					FileReaderManager.getInstance().getConfigReader().getDriverPath());
-			driver = new InternetExplorerDriver();
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 
 		} else if (driverType.equalsIgnoreCase("IE")) {
-			System.setProperty("webdriver.ie.driver",
-					FileReaderManager.getInstance().getConfigReader().getDriverPath());
+			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		} else if (driverType.equalsIgnoreCase("EDGE")) {
-			System.setProperty("webdriver.edge.driver",
-					FileReaderManager.getInstance().getConfigReader().getDriverPath());
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
 		// Maximize logic
