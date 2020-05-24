@@ -70,4 +70,12 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("windowMaximize not specified in Configuration.properties file");
 	}
+
+	public String RecordVideo() {
+		String recordvideo = properties.getProperty("recordvideo");
+		if (recordvideo != null)
+			return recordvideo;
+		else
+			throw new RuntimeException("recordvideo not specified in Configuration.properties file");
+	}
 }

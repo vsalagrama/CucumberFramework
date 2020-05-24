@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 
 
 import dataProvider.ConfigFileReader;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -21,6 +22,8 @@ import managers.PageObjectManager;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
 import pageObjects.Results;
+import utilities.MyScreenRecorder;
+
 import org.apache.commons.io.FileUtils;
 
 import com.aventstack.extentreports.utils.FileUtil;
@@ -39,6 +42,30 @@ public class Steps {
 	@Before
 	public void setup(Scenario scenario) {
 		this.scenario = scenario;
+	}
+	@Before
+	public void startRecording() {
+		String RecordVideo = FileReaderManager.getInstance().getConfigReader().RecordVideo();
+		if(RecordVideo.equalsIgnoreCase("yes")) {
+			try {
+				MyScreenRecorder.startRecording("Record");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+	
+	@After
+	public void stopRecording() throws Exception {
+		MyScreenRecorder.stopRecording();
+	}
+	@After
+	public void tearDown() throws IOException {
+		if(scenario.isFailed()) {
+			get_screenshot();
+		}
 	}
 	
 	@Given("open the url")
