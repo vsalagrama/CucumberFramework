@@ -7,6 +7,6 @@ Scenario: Sample Scenario
 	Given open the url
 	When type "Venkatesh" into searchbar
 	And click Submit
-	#Then get screenshot
+	Then get screenshot
 	Then click Videos
 	Then close
