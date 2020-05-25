@@ -13,15 +13,15 @@ public class HomePage {
 
 	@FindBy(how = How.NAME, using = "q")
 	private WebElement SearchBox;
-	
+
 	@FindBy(how = How.XPATH, using = "(//input[@type='submit' and @value='Google Search'])[2]")
 	private WebElement Submit;
 
 	public void enter_text(String value) {
-		SearchBox.sendKeys(value);
+		SearchBox.sendKeys(value);		
 	}
-	
+
 	public void Submit() {
 		Submit.click();
-		}
 	}
+}
